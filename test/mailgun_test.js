@@ -18,21 +18,23 @@ describe("Mailgun Client", function() {
         })
     })
 
-    it("#send(data, callback)", function(done) {
-        this.mailgun.send({
-            to: "gozap.chenboxiang@gmail.com",
-            subject: "test to",
-            text: "hello! \n chenboxiang",
-            attachment: [{
-                file: path.join(__dirname, "test.gif")
-            }, {
-                file: path.join(__dirname, "test.gif")
-            }]
+    describe("#send(data, callback)", function(done) {
+        it("should send email to mailgun successfully", function(done) {
+            this.mailgun.send({
+                to: "gozap.chenboxiang@gmail.com",
+                subject: "test to",
+                text: "hello! \n chenboxiang",
+                attachment: [{
+                    file: path.join(__dirname, "test.gif")
+                }, {
+                    file: path.join(__dirname, "test.gif")
+                }]
 
-        })(function(err, data, res) {
-            expect(err).to.be(null)
-            expect(res.statusCode).to.be(200)
-            done()
+            })(function(err, data, res) {
+                expect(err).to.be(null)
+                expect(res.statusCode).to.be(200)
+                done()
+            })
         })
     })
 })
