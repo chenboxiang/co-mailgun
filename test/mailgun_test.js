@@ -32,7 +32,6 @@ describe("Mailgun Client", function() {
 
             })(function(err, data, res) {
                 expect(err).to.be(null)
-                expect(res.statusCode).to.be(200)
                 done()
             })
         })
