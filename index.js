@@ -11,7 +11,7 @@ var FromStream = require("formstream")
 var path = require("path")
 
 var defaultConfig = {
-    baseUrl: "https://api.mailgun.net/v2",
+    baseUrl: "https://api.mailgun.net/v3",
     // 10 seconds
     timeout: 10000
 }
